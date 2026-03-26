@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" id="checkout-page">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout • VELOURA</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@600&family=Cinzel+Decorative&family=Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <h1 class="logo">VELOURA</h1>
+        <nav class="nav">
+          <a href="index.html" data-nav>Home</a>
+          <a href="collections.html" data-nav>Collections</a>
+        </nav>
+        <div class="header-actions">
+          <select id="currency" title="Currency">
+            <option value="AUD">AUD</option>
+            <option value="USD">USD</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="section checkout">
+      <div class="checkout-grid">
+        <section class="panel">
+          <h2>Contact & Shipping</h2>
+          <form id="order-form" class="checkout-form" novalidate>
+            <div class="grid-2">
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First name"
+                required
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last name"
+                required
+              />
+            </div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              required
+            />
+            <input
+              type="text"
+              name="address"
+              placeholder="Street address"
+              required
+            />
+            <div class="grid-2">
+              <input type="text" name="city" placeholder="City" required />
+              <input
+                type="text"
+                name="postcode"
+                placeholder="Postcode"
+                required
+              />
+            </div>
+            <button type="submit" class="btn primary" style="width: 100%">
+              Place Order
+            </button>
+          </form>
+        </section>
+
+        <aside class="panel">
+          <h2>Order Summary</h2>
+          <div id="summary-items" class="summary-items"></div>
+          <div class="summary-row">
+            <span>Subtotal</span><strong id="sum-sub">$0.00</strong>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span><strong id="sum-ship">Free</strong>
+          </div>
+          <div class="summary-total">
+            <span>Total</span><strong id="sum-total">$0.00</strong>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+    <script>
+      (function checkout(){
+        const wrap = document.getElementById('summary-items');
+        const sub = document.getElementById('sum-sub');
+        const tot = document.getElementById('sum-total');
+        const items = (function(){ try{return JSON.parse(localStorage.getItem('veloura-cart')||'[]')}catch(e){return[]} })();
+
+        function line(it){
+          const el = document.createElement('div');
+          el.className = 'summary-item';
+          el.innerHTML = \`
+            <img src="\${it.img}" alt="\${it.name}" />
+            <div class="info">
+              <div><strong>\${it.name}</strong></div>
+              <div class="muted">Qty: \${it.qty}</div>
+            </div>
+            <div class="price">\${Currency.fmt(Currency.convertFromAUD(it.price * it.qty))}</div>\`;
+          return el;
+        }
+        function render(){
+          wrap.innerHTML = items.length ? '' : '<p>Your cart is empty.</p>';
+          let subtotalAUD = 0;
+          items.forEach(it=>{ wrap.appendChild(line(it)); subtotalAUD += it.price * it.qty; });
+          sub.textContent = Currency.fmt(Currency.convertFromAUD(subtotalAUD));
+          tot.textContent = Currency.fmt(Currency.convertFromAUD(subtotalAUD)); // free shipping
+        }
+        render();
+
+        document.getElementById('order-form')?.addEventListener('submit', (e)=>{
+          e.preventDefault();
+          localStorage.removeItem('veloura-cart');
+          showToast('Order placed successfully');
+          setTimeout(()=>{ window.location.href='index.html'; }, 1200);
+        });
+      })();
+    </script>
+  </body>
+</html>

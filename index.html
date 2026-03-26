@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VELOURA</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@600&family=Cinzel+Decorative&family=Sofia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <h1 class="logo">VELOURA</h1>
+        <nav class="nav">
+          <a href="index.html" class="active" data-nav>Home</a>
+          <a href="collections.html" data-nav>Collections</a>
+          <a href="#about" data-nav>About</a>
+          <a href="#contact" data-nav>Contact</a>
+        </nav>
+        <div class="header-actions">
+          <select id="currency" title="Currency">
+            <option value="AUD">AUD</option>
+            <option value="USD">USD</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <h2>Elegant Styles. Timeless Fashion.</h2>
+          <p>Explore our curated collection of boutique wear.</p>
+          <div class="hero-cta">
+            <button
+              class="btn primary"
+              onclick="location.href='collections.html'"
+            >
+              SHOP NOW
+            </button>
+            <a class="btn ghost" href="#about">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="collections bounce" id="home-collections">
+        <h2 class="collections-title">Our Collections</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src="assets/images/image1.jpg"
+              alt="Dress"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Dresses</h3>
+
+            <button class="btn view">View</button>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="assets/images/bag1.jpeg"
+              alt="Bag"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Bags</h3>
+
+            <button class="btn view">View</button>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="assets/images/accessory1.jpeg"
+              alt="Jewellery"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Jewellery</h3>
+            <button class="btn view">View</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section">
+        <div class="container">
+          <div class="about-text">
+            <h2>About VELOURA</h2>
+            <p>
+              We blend modern silhouettes with artisanal details for pieces that
+              feel luxurious and last season after season.
+            </p>
+          </div>
+          <div class="about-card">
+            <img
+              src="assets/images/veloura.png"
+              alt="Crafted dress"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials -->
+      <section id="testimonials" class="section testimonials">
+        <div class="t-wrap">
+          <div class="t-head">
+            <h2>What Our Clients Say</h2>
+            <div class="t-ctrls">
+              <button class="icon-btn" id="t-prev" aria-label="Previous">
+                ‹
+              </button>
+              <button class="icon-btn" id="t-next" aria-label="Next">›</button>
+            </div>
+            <!-- Stats / Counters -->
+            <div class="t-stats" id="t-stats">
+              <div class="stat">
+                <div class="num" data-target="2000">0</div>
+                <div class="lbl">Happy Clients</div>
+              </div>
+              <div class="stat">
+                <div class="num" data-target="350">0</div>
+                <div class="lbl">Boutique Pieces</div>
+              </div>
+              <div class="stat">
+                <div class="num" data-target="98">0</div>
+                <div class="lbl">5-Star Reviews</div>
+              </div>
+              <div class="stat">
+                <div class="num" data-target="24">0</div>
+                <div class="lbl">Hour Support</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="t-track" id="t-track" tabindex="0">
+            <article class="t-card">
+              <div class="t-stars" aria-hidden="true">★★★★★</div>
+              <p class="t-quote">
+                “The quality is unreal. My dress feels tailored and
+                premium—worth every dollar.”
+              </p>
+              <div class="t-user">
+                <div class="t-avatar" data-initials="AR"></div>
+                <div>
+                  <strong>Amelia Rose</strong>
+                  <span>Melbourne, AU</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-stars" aria-hidden="true">★★★★★</div>
+              <p class="t-quote">
+                “Fast shipping and gorgeous packaging. The earrings are my new
+                everyday essential.”
+              </p>
+              <div class="t-user">
+                <div class="t-avatar" data-initials="JS"></div>
+                <div>
+                  <strong>Jasmine Singh</strong>
+                  <span>Sydney, AU</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-stars" aria-hidden="true">★★★★★</div>
+              <p class="t-quote">
+                “Love the fit and finish. The bag looks and feels designer
+                without the markup.”
+              </p>
+              <div class="t-user">
+                <div class="t-avatar" data-initials="LC"></div>
+                <div>
+                  <strong>Luca Carter</strong>
+                  <span>Brisbane, AU</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-stars" aria-hidden="true">★★★★★</div>
+              <p class="t-quote">
+                “Customer support was amazing. Helped me pick the right size in
+                minutes.”
+              </p>
+              <div class="t-user">
+                <div class="t-avatar" data-initials="EM"></div>
+                <div>
+                  <strong>Emma Morgan</strong>
+                  <span>Adelaide, AU</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section">
+        <div class="container">
+          <h2>Contact Us</h2>
+          
+          <div class="contact-info">
+    <p><strong>Email:</strong> nivyacruiso@gmail.com</p>
+    <p><strong>Phone:</strong> 0481 840 646</p>
+    <p><strong>Address:</strong> 8 Sutherland, Melbourne 3000, VIC</p>
+  </div>
+  <div class="contact-action">
+  <button id="enquiryBtn" class="enquiry-btn" type="button" aria-haspopup="dialog" aria-controls="enquiryModal">
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M2 4h20v16H2V4zm2 2v.4l8 5.6 8-5.6V6H4zm16 12V8.3l-8 5.6-8-5.6V18h16z"/>
+    </svg>
+    ENQUIRY
+  </button>
+</div>
+
+</section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 VELOURA. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram" title="Instagram">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-.75a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+            />
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook" title="Facebook">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.06 5.66 21.2 10.44 22v-7.02H7.9v-2.91h2.54v-2.22c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22C18.34 21.2 22 17.06 22 12.07z"
+            />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="enquiryModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="enquiryTitle" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel" role="document">
+    <button class="modal-close" type="button" aria-label="Close" data-close-modal>&times;</button>
+    <div class="modal-header">
+      <div class="modal-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M2 4h20v16H2V4zm2 2v.4l8 5.6 8-5.6V6H4zm16 12V8.3l-8 5.6-8-5.6V18h16z"/>
+        </svg>
+      </div>
+      <h3 id="enquiryTitle">ENQUIRY</h3>
+    </div>
+<form id="enquiryForm" class="modal-form" autocomplete="on" novalidate>
+  <div class="grid-2">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Email Address" required />
+  </div>
+  <textarea name="message" rows="5" placeholder="Message" required></textarea>
+  <div class="modal-actions">
+    <button type="submit" class="btn primary">Send Message</button>
+    <button type="button" class="btn ghost" data-close-modal>Cancel</button>
+  </div>
+</form>
+
+
+  </div>
+</div>
+
+
+    <script src="script.js"></script>
+<script>
+  (() => {
+    const API = "http://localhost:4000/api/enquiries";
+
+    function wireForm(form) {
+      if (!form) return;
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const fd = new FormData(form);
+        const payload = {
+          name: (fd.get("name") || "").trim(),
+          email: (fd.get("email") || "").trim(),
+          message: (fd.get("message") || "").trim(),
+        };
+
+        try {
+          const res = await fetch(API, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          // Expect JSON: { ok: true, id: number }  (matches your API test)
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (!data || data.ok !== true) throw new Error("API rejected");
+
+          form.reset();
+          alert("Sent successfully.");
+        } catch (err) {
+          console.error(err);
+          alert("Sending failed");
+        }
+      });
+    }
+
+    // Wire both main contact form and modal form if present
+    wireForm(document.querySelector(".contact-form"));
+    wireForm(document.querySelector(".modal-form"));
+  })();
+</script>
+
+  </body>
+</html>
